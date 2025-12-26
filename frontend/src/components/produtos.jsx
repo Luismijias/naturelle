@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import Produtos from "./components/Produtos";
+import "./Produtos.css";
+
 
 function App() {
   const [produtos, setProdutos] = useState([]);
-  const apiUrl = import.meta.env.VITE_API_URL;
+  const apiUrl = import.meta.env.VITE_API_URL; // coloque a URL do backend aqui
 
   useEffect(() => {
     fetch(`${apiUrl}/produtos`)
@@ -21,3 +23,4 @@ function App() {
 }
 
 export default App;
+
