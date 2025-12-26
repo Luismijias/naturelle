@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import Produtos from "./components/Produtos";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [produtos, setProdutos] = useState([]);
@@ -14,8 +16,10 @@ function App() {
 
   return (
     <div className="App">
+       <Header />
       <h1>Lista de Produtos</h1>
       <Produtos produtos={produtos} />
+       <Footer />
     </div>
   );
 }

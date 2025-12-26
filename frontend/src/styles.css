@@ -1,0 +1,20 @@
+:root {
+  --cor-principal: #10B981; /* verde principal */
+  --cor-secundaria: #047857; /* verde escuro */
+  --cor-fundo: #ffffff;
+  --cor-texto: #111827;
+  --cor-sombra: rgba(0, 0, 0, 0.1);
+}
+
+
+/* Truque para marcar os contairners */
+* {  
+    outline: 2px solid red !important;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    
+
+}
+
+
