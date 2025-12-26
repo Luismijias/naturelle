@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Produtos from "./components/Produtos";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import ProductCard from "./components/ProductCard";
 
 function App() {
   const [produtos, setProdutos] = useState([]);
