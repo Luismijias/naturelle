@@ -2,25 +2,21 @@ import { useEffect, useState } from "react";
 import Produtos from "./components/Produtos";
 import "./Produtos.css";
 
-
-function App() {
-  const [produtos, setProdutos] = useState([]);
-  const apiUrl = import.meta.env.VITE_API_URL; // coloque a URL do backend aqui
-
-  useEffect(() => {
-    fetch(`${apiUrl}/produtos`)
-      .then((res) => res.json())
-      .then((data) => setProdutos(data))
-      .catch((err) => console.error("Erro ao buscar produtos:", err));
-  }, []);
+function Produtos({ produtos }) {
+  if (!produtos.length) return <p>Carregando produtos...</p>;
 
   return (
-    <div className="App">
-      <h1>Lista de Produtos</h1>
-      <Produtos produtos={produtos} />
+    <div className="produtos-container">
+      {produtos.map((produto) => (
+        <div key={produto.id} className="produto-card">
+          <h2>{produto.nome}</h2>
+          <p>{produto.descricao || "Sem descrição"}</p>
+          <p>Preço: {produto.preco || "Não informado"}</p>
+        </div>
+      ))}
     </div>
   );
 }
 
-export default App;
+export default Produtos;
 
