@@ -23,3 +23,10 @@
   margin: 5px 0;
 }
 
+.produto-imagem {
+  width: 100%;
+  height: 200px; /* altura do card da imagem */
+  object-fit: cover; /* garante que a imagem preencha o espaço sem deformar */
+  border-radius: 10px 10px 0 0; /* apenas as bordas de cima arredondadas */
+  margin-bottom: 10px;
+}

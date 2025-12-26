@@ -8,6 +8,14 @@ function Produtos({ produtos }) {
     <div className="produtos-container">
       {produtos.map((produto) => (
         <div key={produto.id} className="produto-card">
+          {/* Imagem acima do conteúdo */}
+          {produto.imagem_url && (
+            <img
+              src={produto.imagem_url}
+              alt={produto.nome}
+              className="produto-imagem"
+            />
+          )}
           <h2>{produto.nome}</h2>
           <p>{produto.descricao || "Sem descrição"}</p>
           <p>Preço: {produto.preco || "Não informado"}</p>
@@ -18,4 +26,5 @@ function Produtos({ produtos }) {
 }
 
 export default Produtos;
+
 
