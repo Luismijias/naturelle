@@ -1,31 +1,27 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 
 function App() {
   const [produtos, setProdutos] = useState([]);
 
+  // Usa a variável de ambiente correta
+  const apiUrl = import.meta.env.VITE_API_URL;
+
   useEffect(() => {
-    fetch("http://localhost:3000/produtos")
-      .then(res => res.json())
-      .then(data => setProdutos(data))
-      .catch(err => console.error("Erro ao carregar produtos:", err));
+    fetch(`${apiUrl}/produtos`)
+      .then((res) => res.json())
+      .then((data) => setProdutos(data))
+      .catch((err) => console.error("Erro ao buscar produtos:", err));
   }, []);
 
   return (
     <div>
-      <h1>Naturelle Encapsulados Naturais</h1>
-      <div className="produtos-grid">
-        {Array.isArray(produtos) && produtos.map(p => (
-          <div key={p.id} className="produto-card">
-            <h2>{p.nome}</h2>
-            <p>{p.descricao}</p>
-            <strong>R$ {p.preco}</strong>
-          </div>
-        ))}
-      </div>
+      {produtos.map((produto) => (
+        <div key={produto.id}>{produto.nome}</div>
+      ))}
     </div>
   );
 }
 
 export default App;
+
 
