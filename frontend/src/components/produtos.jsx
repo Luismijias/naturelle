@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import Produtos from "./components/Produtos";
-import "./Produtos.css";
+import "./index.css";
 
 function Produtos({ produtos }) {
   if (!produtos.length) return <p>Carregando produtos...</p>;
