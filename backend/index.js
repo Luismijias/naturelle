@@ -7,22 +7,31 @@ dotenv.config();
 const { Pool } = pkg;
 
 const app = express();
-app.use(cors());
+
+// Permitir CORS para localhost e qualquer frontend
+app.use(cors({
+  origin: ["http://localhost:5173", "https://seu-frontend-online.com"]
+}));
+
 app.use(express.json());
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false }
 });
 
-app.get("/health", (req, res) => {
-  res.json({ status: "API funcionando" });
-});
+app.get("/health", (req, res) => res.json({ status: "API funcionando" }));
 
 app.get("/produtos", async (req, res) => {
-  const result = await pool.query("SELECT * FROM produtos");
-  res.json(result.rows);
+  try {
+    const result = await pool.query("SELECT * FROM produtos");
+    res.json(result.rows);
+  } catch (err) {
+    console.error("Erro ao buscar produtos:", err.message);
+    res.status(500).json({ error: "Erro ao conectar no banco de dados" });
+  }
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log("API rodando na porta", PORT));
+app.listen(PORT, () => console.log(`API rodando na porta ${PORT}`));
 
