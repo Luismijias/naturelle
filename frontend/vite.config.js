@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { ErrorCode } from 'selenium-webdriver/lib/error'
 
 export default defineConfig({
   plugins: [react()],
@@ -11,4 +12,6 @@ export default defineConfig({
     ]
   }
 })
+
+// testando comiti pelo vs-ErrorCode
 
