@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import Produtos from "./components/produtos";
+import Produtos from "./components/Produtos";
 
 function App() {
   const [produtos, setProdutos] = useState([]);
   const apiUrl = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
-    fetch(`${apiUrl}/produtos`)
+    fetch(`${apiUrl}/Produtos`)
       .then((res) => res.json())
       .then((data) => setProdutos(data))
       .catch((err) => console.error("Erro ao buscar produtos:", err));
