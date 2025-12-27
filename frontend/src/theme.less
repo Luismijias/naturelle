@@ -1,0 +1,48 @@
+// Paleta Naturelle
+@primary-color: #10B981;         
+@info-color: #10B981;
+@success-color: #10B981;
+@warning-color: #f59e0b;
+@error-color: #ef4444;
+@cor-fundo: #ffffff;
+
+// --- NOVAS VARIÁVEIS PARA COMPATIBILIDADE ---
+@cor-principal: @primary-color;
+@cor-secundaria: #059669;        // Um tom de verde mais escuro para contraste
+@cor-texto: #111827;            // Mapeado do seu @text-color
+@cor-sombra: rgba(0, 0, 0, 0.08); // Sombra suave para o header e menus
+@cor-texto-secundario: #6b7280;
+// --------------------------------------------
+
+// Tipografia e borda
+@font-size-base: 14px;
+@border-radius-base: 8px;
+
+// Cores de fundo e texto
+@body-background: #ffffff;
+@component-background: #ffffff;
+@text-color: #111827;
+@heading-color: #111827;
+@text-color-secondary: #6b7280;
+
+// Borda e hover
+@border-color-base: #e5e7eb;
+@item-active-bg: fade(@primary-color, 10%);
+@item-hover-bg: fade(@primary-color, 6%);
+
+// Botões
+@btn-primary-bg: @primary-color;
+@btn-primary-color: #ffffff;
+
+// Layout geral da aplicação
+.app-wrapper {
+  min-height: 100vh;
+  background: #f9fafb;
+}
+
+.page-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: @heading-color;
+  margin-bottom: 1rem;
+}

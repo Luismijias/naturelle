@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { HiMenu, HiX, HiShoppingCart } from "react-icons/hi";
-import './Header.css';
+import './Header.less';
 
 export default function Header({ toggleCart, cartCount = 0 }) {
   const [menuOpen, setMenuOpen] = useState(false);

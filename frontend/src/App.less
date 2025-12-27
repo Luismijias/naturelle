@@ -1,0 +1,54 @@
+@import '../src/theme.less';
+
+#root {
+  width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+
+  // Hover padrão para logos
+  &:hover {
+    filter: drop-shadow(0 0 2em fade(#646cff, 67%));
+  }
+
+  // Hover específico para a logo do React
+  &.react {
+    &:hover {
+      filter: drop-shadow(0 0 2em fade(#61dafb, 67%));
+    }
+  }
+}
+
+// Definição da animação (Keyframes)
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Aplicação da animação com Media Query
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) {
+    .logo {
+      animation: logo-spin infinite 20s linear;
+    }
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}

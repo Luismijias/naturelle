@@ -1,0 +1,88 @@
+@import '../../src/theme.less';
+
+.product-card {
+  background: @cor-fundo;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px @cor-sombra;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  // Efeito ao passar o mouse no card
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  }
+
+  .product-image-wrapper {
+    padding: 0.75rem;
+    background: #f9fafb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .product-image {
+      width: 90%;
+      max-height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  }
+
+  .product-content {
+    padding: 1.25rem;
+
+    .product-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: @cor-texto;
+      margin: 0 0 0.4rem;
+    }
+
+    .product-description {
+      font-size: 0.9rem;
+      color: @text-color-secondary; // Usando sua variável global
+      margin: 0 0 0.75rem;
+      min-height: 2.5rem;
+    }
+
+    .product-price {
+      font-weight: 600;
+      color: @cor-secundaria;
+    }
+  }
+
+  .product-button {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    background: @cor-principal;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.2s ease, transform 0.1s ease;
+
+    &:hover {
+      background: @cor-secundaria;
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: scale(0.98); // Pequeno efeito de clique
+    }
+  }
+
+  // Responsivo aninhado
+  @media (max-width: 480px) {
+    .product-content {
+      padding: 0.9rem 1rem 1.1rem;
+
+      .product-title {
+        font-size: 1rem;
+      }
+    }
+  }
+}

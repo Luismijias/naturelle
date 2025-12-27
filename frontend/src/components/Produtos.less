@@ -1,0 +1,45 @@
+@import '../../src/theme.less';
+
+.produtos-container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  padding: 20px;
+  background-color: #f9fafb; // Usei um tom próximo ao seu @body-background
+
+  .produto-card {
+    padding: 15px;
+    border: 1px solid @border-color-base;
+    border-radius: @border-radius-base;
+    background-color: @component-background;
+    color: @cor-texto;
+    box-shadow: 0 2px 5px @cor-sombra;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px @cor-sombra;
+    }
+
+    .produto-imagem {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: (@border-radius-base - 2px) (@border-radius-base - 2px) 0 0;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      font-size: 1.25rem;
+      color: @heading-color;
+    }
+
+    p {
+      margin: 5px 0;
+      color: @text-color-secondary;
+      line-height: 1.5;
+    }
+  }
+}
